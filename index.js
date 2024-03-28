@@ -2,7 +2,8 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-function generateREADME(answers) {
+// makes README
+function makeREADME(answers) {
   return `
 # ${answers.title}
 
@@ -92,7 +93,7 @@ function init() {
       },
     ])
     .then((answers) => {
-      const readmeContent = generateREADME(answers);
+      const readmeContent = makeREADME(answers);
       // DONE: Create a function to write README file
       fs.writeFile("README.md", readmeContent, (err) => {
         if (err) {
